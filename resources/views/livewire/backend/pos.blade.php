@@ -158,7 +158,7 @@
     <script>
         function alert_function(){
             Swal.fire({
-                position: 'footer-end',
+                position: 'center',
                 icon: 'success',
                 title: 'Success',
                 showConfirmButton: false,

@@ -83,35 +83,39 @@ class Pos extends Component
 
     public function save()
     {
-        try{
-           $invoice = Invoice::create([
-                // 'custom_id' => '',
-                'customer_phone' => $this->customer_phone,
-                'discount_amount' => $this->discount_amount,
-                'paid_amount' => $this->paid_amount,
-                'parcel' => $this->parcel ?? false
-           ]);
-
-           foreach ($this->basket as $card_item) {
-                InvoiceItem::create([
-                    'invoice_id' => $invoice->id,
-                    'product_id' => $card_item['id'],
-                    'quantity' => $card_item['qty'],
-                    'price' => $card_item['price'],
+        if(count($this->basket) > 0){
+            try{
+                $invoice = Invoice::create([
+                     // 'custom_id' => '',
+                     'customer_phone' => $this->customer_phone,
+                     'discount_amount' => $this->discount_amount,
+                     'paid_amount' => $this->paid_amount,
+                     'parcel' => $this->parcel ?? false
                 ]);
-            }
-        }catch(\Exception $e){
-            session()->flash('message', $e->getMessage());
+     
+                foreach ($this->basket as $card_item) {
+                     InvoiceItem::create([
+                         'invoice_id' => $invoice->id,
+                         'product_id' => $card_item['id'],
+                         'quantity' => $card_item['qty'],
+                         'price' => $card_item['price'],
+                     ]);
+                 }
+             }catch(\Exception $e){
+                 session()->flash('message', $e->getMessage());
+             }
+             $this->basket = array();
+             $this->searched_key = null;
+             $this->customer_phone = null;
+             $this->discount_amount = 0;
+             $this->paid_amount = 0;
+             $this->parcel = false;
+             $this->invoice_url = route('invoice.show', [$invoice, 'kitchen=yes']);
+             // session()->flash('message', 'Successfully done');
+             toastr()->success('Success');
+        }else{
+            session()->flash('message', 'Item not found');
         }
-        $this->basket = array();
-        $this->searched_key = null;
-        $this->customer_phone = null;
-        $this->discount_amount = 0;
-        $this->paid_amount = 0;
-        $this->parcel = false;
-        $this->invoice_url = route('invoice.show', [$invoice, 'kitchen=yes']);
-        // session()->flash('message', 'Successfully done');
-        toastr()->success('Success');
     }
 
     public function mount()
