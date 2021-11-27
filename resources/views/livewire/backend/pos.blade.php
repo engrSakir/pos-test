@@ -1,9 +1,9 @@
 <div class="row m-1">
     <div class="col-12">
         @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
         @endif
     </div>
     <div class="col-7">
@@ -14,7 +14,7 @@
                     <select name="" id="" class="form-select select2" wire:model="searched_product_category">
                         <option value="all">{{ __('All Category') }}</option>
                         @foreach ($productCategories as $productCategory)
-                            <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
+                        <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -26,17 +26,17 @@
             <div class="card-body product-card">
                 <div class="row">
                     @foreach ($products as $product)
-                        <div class="col-3">
-                            <div class="card m-1 hoverable" wire:click="addToCard({{ $product->id }})">
-                                <img class="card-img-top rounded mx-auto d-block" height="90px;"
-                                    style="margin-bottom: -10px;"
-                                    src="{{ asset($product->image ?? 'assets/images/no_food.png') }}">
-                                <div class="card-body text-center">
-                                    <p class="card-text" style="margin-bottom: -5px;">{{ $product->name }}</p>
-                                    <span class="badge bg-primary">{{ $product->price }}</span>
-                                </div>
+                    <div class="col-3">
+                        <div class="card m-1 hoverable" wire:click="addToCard({{ $product->id }})">
+                            <img class="card-img-top rounded mx-auto d-block" height="90px;"
+                                style="margin-bottom: -10px;"
+                                src="{{ asset($product->image ?? 'assets/images/no_food.png') }}">
+                            <div class="card-body text-center">
+                                <p class="card-text" style="margin-bottom: -5px;">{{ $product->name }}</p>
+                                <span class="badge bg-primary">{{ $product->price }}</span>
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>
@@ -81,18 +81,19 @@
                             <div class="input-group-prepend" style="width:30%;">
                                 <span class="input-group-text">Discount</span>
                             </div>
-                            <input type="text" class="form-control form-control-sm" style="width:40%;" placeholder="Discount"
-                                wire:model="discount_amount">
+                            <input type="text" class="form-control form-control-sm" style="width:40%;"
+                                placeholder="Discount" wire:model="discount_amount">
                             <div class="input-group-append" style="width:30%;">
                                 <span class="input-group-text">Pay:
-                                    {{ array_sum(array_column($basket, 'sub_total_price')) - round($discount_amount, 1) }}</span>
+                                    {{ array_sum(array_column($basket, 'sub_total_price')) - round($discount_amount, 1)
+                                    }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="form-check mt-2" style="font-size: 16px;">
                             <input class="form-check-input" type="checkbox" value="" id="parcel" wire:model="parcel">
-                            <label class="form-check-label" for="parcel" >
+                            <label class="form-check-label" for="parcel">
                                 Parcel check
                             </label>
                         </div>
@@ -102,17 +103,19 @@
                             <div class="input-group-prepend" style="width:30%;">
                                 <span class="input-group-text">Paid</span>
                             </div>
-                            <input type="text" class="form-control form-control-sm" style="width:40%;" placeholder="Paid amount"
-                                wire:model="paid_amount">
+                            <input type="text" class="form-control form-control-sm" style="width:40%;"
+                                placeholder="Paid amount" wire:model="paid_amount">
                             <div class="input-group-append" style="width:30%;">
                                 <span class="input-group-text">Re.
-                                    {{ -array_sum(array_column($basket, 'sub_total_price')) + round($paid_amount, 2) + round($discount_amount, 1) }}</span>
+                                    {{ -array_sum(array_column($basket, 'sub_total_price')) + round($paid_amount, 2) +
+                                    round($discount_amount, 1) }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="m-2">
-                            <button type="button" class="btn btn-danger btn-sm btn-block" style="width: 100%;"  wire:click="save">Save Invoice</button>
+                            <button type="button" class="btn btn-danger btn-sm btn-block" style="width: 100%;"
+                                wire:click="save">Save Invoice</button>
                         </div>
                     </div>
                 </div>
@@ -129,21 +132,21 @@
                     </thead>
                     <tbody>
                         @foreach ($basket as $basket_item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td style="font-size:12px;">{{ $basket_item['name'] }}</td>
-                                <td style="text-align: right;">{{ $basket_item['price'] }}</td>
-                                <td style="text-align: right;">{{ $basket_item['qty'] }}</td>
-                                <td style="text-align: right;">{{ $basket_item['price'] * $basket_item['qty'] }}</td>
-                                <td style="text-align: right;">
-                                    <i class="fa fa-plus-square fa-lg text-success hoverable"
-                                        wire:click="addToCard({{ $basket_item['id'] }})"></i>
-                                    <i class="fa fa-minus-square fa-lg text-warning hoverable"
-                                        wire:click="removeFromCard({{ $basket_item['id'] }})"></i>
-                                    <i class="fa fa-trash fa-lg text-danger hoverable"
-                                        wire:click="allRemoveFromCard({{ $basket_item['id'] }})"></i>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td style="font-size:12px;">{{ $basket_item['name'] }}</td>
+                            <td style="text-align: right;">{{ $basket_item['price'] }}</td>
+                            <td style="text-align: right;">{{ $basket_item['qty'] }}</td>
+                            <td style="text-align: right;">{{ $basket_item['price'] * $basket_item['qty'] }}</td>
+                            <td style="text-align: right;">
+                                <i class="fa fa-plus-square fa-lg text-success hoverable"
+                                    wire:click="addToCard({{ $basket_item['id'] }})"></i>
+                                <i class="fa fa-minus-square fa-lg text-warning hoverable"
+                                    wire:click="removeFromCard({{ $basket_item['id'] }})"></i>
+                                <i class="fa fa-trash fa-lg text-danger hoverable"
+                                    wire:click="allRemoveFromCard({{ $basket_item['id'] }})"></i>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -152,25 +155,37 @@
     </div>
 
     @if ($invoice_url)
-        <div wire:ignore.self class="modal fade" id="inv_modal" data-backdrop="static" tabindex="-1" role="dialog"
-            aria-labelledby="" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="">{{ __('Invoice') }}</h5>
-                    </div>
-                    <div class="modal-body">
-                        <iframe src="{{ $invoice_url }}" frameborder="0" width="100%;" height="600px;"></iframe>
-                    </div>
+    <script>
+        function alert_function(){
+            Swal.fire({
+                position: 'footer-end',
+                icon: 'success',
+                title: 'Success',
+                showConfirmButton: false,
+                timer: 800
+            });
+        }
+        alert_function();
+    </script>
+    <div wire:ignore.self class="modal fade" id="inv_modal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">{{ __('Invoice') }}</h5>
+                </div>
+                <div class="modal-body">
+                    <iframe src="{{ $invoice_url }}" frameborder="0" width="100%;" height="600px;"></iframe>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            function openModal() {
+    </div>
+    <script type="text/javascript">
+        function openModal() {
                 var myModal = new bootstrap.Modal(document.getElementById('inv_modal'));
                 myModal.show();
             }
             openModal();
-        </script>
+    </script>
     @endif
 </div>

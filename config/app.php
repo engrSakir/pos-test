@@ -167,6 +167,7 @@ return [
          */
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
         /*
          * Application Service Providers...
          */

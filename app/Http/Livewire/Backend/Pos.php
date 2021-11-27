@@ -110,7 +110,8 @@ class Pos extends Component
         $this->paid_amount = 0;
         $this->parcel = false;
         $this->invoice_url = route('invoice.show', [$invoice, 'kitchen=yes']);
-        session()->flash('message', 'Successfully done');
+        // session()->flash('message', 'Successfully done');
+        toastr()->success('Success');
     }
 
     public function mount()
@@ -129,7 +130,7 @@ class Pos extends Component
         }else{
             $this->products = Product::latest()->where('status', true)->get();
         }
-
+        toastr()->success('Welcome to POS module');
         return view('livewire.backend.pos')
             ->layout('layouts.pos.app');
     }

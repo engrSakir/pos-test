@@ -5,6 +5,7 @@
 <head>
     @include('layouts.backend.partials.head')
     @livewireStyles
+    @toastr_css
 </head>
 
 <body>
@@ -99,6 +100,19 @@
     <!-- Required vendors -->
     @include('layouts.backend.partials.foot')
     @livewireScripts
+    {{-- @jquery --}}
+    @toastr_js
+    @toastr_render
+
+    <script>
+        window.addEventListener('alert', event => { 
+                     toastr[event.detail.type](event.detail.message, 
+                     event.detail.title ?? ''), toastr.options = {
+                            "closeButton": true,
+                            "progressBar": true,
+                        }
+                    });
+        </script>
 </body>
 
 </html>

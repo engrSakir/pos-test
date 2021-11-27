@@ -14,4 +14,3 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/backend/images/favicon.png">
 <link href="assets/backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="assets/backend/css/style.css" rel="stylesheet">
-@livewireStyles
