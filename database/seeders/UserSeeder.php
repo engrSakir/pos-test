@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
         Permission::create(['name' => 'invoice']);
         Permission::create(['name' => 'report']);
         Permission::create(['name' => 'customerPhone']);
+        Permission::create(['name' => 'setting']);
 
 
         $role = Role::create(['name' => 'developer']);

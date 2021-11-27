@@ -57,6 +57,11 @@
                     <span class="nav-text">Report</span>
                 </a>
             </li>
+            <li><a class="has-arrow ai-icon" href="{{ route('setting') }}" aria-expanded="false">
+                    <i class="flaticon-044-file"></i>
+                    <span class="nav-text">Setting</span>
+                </a>
+            </li>
         </ul>
         <div class="copyright">
             <p><strong>Software</strong> Developed by</p>

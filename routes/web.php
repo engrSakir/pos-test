@@ -12,6 +12,7 @@ use App\Http\Livewire\Backend\Product;
 use App\Http\Livewire\Backend\ProductCategory;
 use App\Http\Livewire\Backend\Profile;
 use App\Http\Livewire\Backend\Report;
+use App\Http\Livewire\Backend\Setting;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pos', Pos::class)->name('pos')->middleware(['permission:pos']); //Livewire route
     Route::get('/customer-phone', CustomerPhone::class)->name('customerPhone')->middleware(['permission:customerPhone']); //Livewire route
     Route::get('/report', Report::class)->name('report')->middleware(['permission:report']); //Livewire route
+    Route::get('/setting', Setting::class)->name('setting')->middleware(['permission:setting']); //Livewire route
 
     Route::get('/profile', Profile::class)->name('profile'); //Livewire route
     Route::get('/invoice/{invoice}', [InvoiceController::class, 'show'])->name('invoice.show');
