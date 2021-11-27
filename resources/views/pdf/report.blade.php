@@ -28,8 +28,8 @@
 
 <body>
     <div style="width: 100%; text-align:center;">
-        <img src="{{ asset('assets/backend/images/logo.png') }}" width="216" height="50" alt=""> <br>
-        <p style="font-size: 26px; margin:20px 0px 0px 0px;">সুলেমান রেস্টুরেন্ট এন্ড কাবাব</p>
+        <img src="{{ asset('assets/images/mid-logo.png') }}" width="116" height="80" alt=""> <br>
+        <p style="font-size: 26px; margin:5px 0px 0px 0px;">সুলেমান রেস্টুরেন্ট এন্ড কাবাব</p>
         <p style="font-size: 16px; margin:0px 0px 5px 0px;">৫৭, পশ্চিম আগারগাঁও (বিজ্ঞান জাদুঘর টিকেট কাউন্টারের বিপরীতে)</p>
         <p style="font-size: 16px; margin:0px 0px 0px 0px;">হটলাইনঃ ০১৭৮৯ ৮৮ ০০ ০০, ফোনঃ ০২-৪৮১১২১৪১</p>
         <p style="font-size: 16px; margin:0px 0px 0px 0px;">ই-মেইলঃ sulemankabab@gmail.com</p>

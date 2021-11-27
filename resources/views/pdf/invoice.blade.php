@@ -138,8 +138,8 @@
 
 <body>
     <div style="width: 100%; text-align:center;">
-        <img src="{{ asset('assets/backend/images/logo.png') }}" width="216" height="37" alt=""> <br>
-        <p style="font-size: 18px; margin:20px 0px 0px 0px;">সুলেমান</p>
+        <img src="{{ asset('assets/images/mid-logo.png') }}" width="116" height="80" alt=""> <br>
+        <p style="font-size: 18px; margin:5px 0px 0px 0px;">সুলেমান</p>
         <p style="font-size: 14px; margin:0px 0px 5px 0px;">রেস্টুরেন্ট এন্ড কাবাব</p>
         <p style="font-size: 10px; margin:0px 0px 5px 0px;">৫৭, পশ্চিম আগারগাঁও</p>
         <p style="font-size: 10px; margin:0px 0px 0px 0px;">(বিজ্ঞান জাদুঘর টিকেট কাউন্টারের বিপরীতে)</p>
