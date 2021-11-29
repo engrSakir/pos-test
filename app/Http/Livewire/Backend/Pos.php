@@ -86,7 +86,6 @@ class Pos extends Component
         $this->validate([
             'product_id_number' => 'required|exists:products,id'
         ]);
-
         $this->addToCard($this->product_id_number);
     }
 

@@ -24,9 +24,10 @@
                 <div>
                     <form wire:submit.prevent="addByProductID">
                         <div class="input-group">
-                            <input type="number" class="form-control" placeholder="Product ID" name="product_id_number" wire:model="product_id_number">
+                            <input type="number" class="form-control" placeholder="Product ID" name="product_id_number"
+                                wire:model="product_id_number">
                             <div class="input-group-append">
-                              <button class="btn btn-success" type="submit">+</button>
+                                <button class="btn btn-success" type="submit">+</button>
                             </div>
                         </div>
                     </form>
@@ -41,7 +42,8 @@
                                 style="margin-bottom: -10px;"
                                 src="{{ asset($product->image ?? 'assets/images/no_food.png') }}">
                             <div class="card-body text-center">
-                                <p class="card-text" style="margin-bottom: -5px;">{{ $product->id }}) {{ $product->name }}</p>
+                                <p class="card-text" style="margin-bottom: -5px;">{{ $product->id }}) {{ $product->name
+                                    }}</p>
                                 <span class="badge bg-primary">{{ $product->price }}</span>
                             </div>
                         </div>
@@ -55,8 +57,15 @@
         <div class="card">
             <div class="card-header bg-danger text-white d-flex justify-content-between">
                 <div>
-                    <input type="text" class="form-control" placeholder="Sales receipt id"
-                        wire:model="sales_receipt_id">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Sales receipt ID"
+                            name="sales_receipt_id" wire:model="sales_receipt_id">
+                        <div class="input-group-append">
+                            @if($sales_receipt_id)
+                            <a href="{{ url('/invoice/'.$sales_receipt_id.'?kitchen=yes') }}" class="btn btn-success" target="_blank">PRINT</a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -123,8 +132,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="m-2">
+                            @if(count($basket) > 0)
                             <button type="button" class="btn btn-danger btn-sm btn-block" style="width: 100%;"
                                 wire:click="save">Save Invoice</button>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -176,7 +187,7 @@
         }
         alert_function();
     </script>
-    <div wire:ignore.self class="modal fade" id="inv_modal" data-backdrop="static" tabindex="-1" role="dialog"
+    <div wire:ignore.self class="modal fade" id="inv_modal" data-backdrop="static" data-bs-keyboard="false" data-keyboard="false" tabindex="-1" role="dialog"
         aria-labelledby="" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -189,12 +200,16 @@
             </div>
         </div>
     </div>
+
+    
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+
     <script type="text/javascript">
         function openModal() {
-                var myModal = new bootstrap.Modal(document.getElementById('inv_modal'));
-                myModal.show();
-            }
-            openModal();
+            var myModal = new bootstrap.Modal(document.getElementById('inv_modal'));
+            myModal.show();
+        }
+        openModal(); 
     </script>
     @endif
 </div>
