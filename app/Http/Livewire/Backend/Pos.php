@@ -21,6 +21,7 @@ class Pos extends Component
     public $searched_product_category = null;
     public $parcel = null;
     public $sales_receipt_id = null;
+    public $product_id_number = null;
 
 
     public function addToCard($id)
@@ -79,6 +80,14 @@ class Pos extends Component
         }catch(\Exception $e){
 
         }
+    }
+
+    public function addByProductID(){
+        $this->validate([
+            'product_id_number' => 'required|exists:products,id'
+        ]);
+
+        $this->addToCard($this->product_id_number);
     }
 
     public function save()

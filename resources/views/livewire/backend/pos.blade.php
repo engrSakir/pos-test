@@ -18,9 +18,18 @@
                         @endforeach
                     </select>
                 </div>
-
                 <div>
                     <input type="text" class="form-control" placeholder="Search" wire:model="searched_product">
+                </div>
+                <div>
+                    <form wire:submit.prevent="addByProductID">
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Product ID" name="product_id_number" wire:model="product_id_number">
+                            <div class="input-group-append">
+                              <button class="btn btn-success" type="submit">+</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="card-body product-card">
@@ -32,7 +41,7 @@
                                 style="margin-bottom: -10px;"
                                 src="{{ asset($product->image ?? 'assets/images/no_food.png') }}">
                             <div class="card-body text-center">
-                                <p class="card-text" style="margin-bottom: -5px;">{{ $product->name }}</p>
+                                <p class="card-text" style="margin-bottom: -5px;">{{ $product->id }}) {{ $product->name }}</p>
                                 <span class="badge bg-primary">{{ $product->price }}</span>
                             </div>
                         </div>
