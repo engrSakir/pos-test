@@ -7,7 +7,7 @@
                 <div class="col-xl-12">
                     <div class="auth-form">
                         <div class="text-center mb-3">
-                            <img src="{{ asset('assets/images/cover.jpg') }}" width="100%" alt="">
+                            <img src="{{ asset('assets/images/cover.png') }}" width="100%" alt="">
                         </div>
                         <h4 class="text-center mb-4">Sign in your account</h4>
                         <form action="{{ route('login') }}" method="POST">
@@ -46,7 +46,7 @@
                         </div> --}}
                     </div>
                     <div class="card-footer text-center">
-                        <h5>Developed by Datatech BD Ltd.</h5>
+                        <h5>Developed by iciclecorporation.com</h5>
                     </div>
                 </div>
             </div>

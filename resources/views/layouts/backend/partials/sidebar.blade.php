@@ -65,7 +65,7 @@
         </ul>
         <div class="copyright">
             <p><strong>Software</strong> Developed by</p>
-            <p class="fs-12"> Datatech BD Ltd. <br>Call: +88 01304 734623 </p>
+            <p class="fs-12"> iciclecorporation.com </p>
         </div>
     </div>
 </div>

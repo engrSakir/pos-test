@@ -139,13 +139,12 @@
 <body>
     <div style="width: 100%; text-align:center;">
         <img src="{{ asset('assets/images/mid-logo.png') }}" width="116" height="80" alt=""> <br>
-        <p style="font-size: 18px; margin:5px 0px 0px 0px;">সুলেমান</p>
-        <p style="font-size: 14px; margin:0px 0px 5px 0px;">রেস্টুরেন্ট এন্ড কাবাব</p>
-        <p style="font-size: 10px; margin:0px 0px 5px 0px;">৫৭, পশ্চিম আগারগাঁও</p>
-        <p style="font-size: 10px; margin:0px 0px 0px 0px;">(বিজ্ঞান জাদুঘর টিকেট কাউন্টারের বিপরীতে)</p>
-        <p style="font-size: 10px; margin:0px 0px 0px 0px;">হটলাইনঃ ০১৭৮৯ ৮৮ ০০ ০০</p>
-        <p style="font-size: 10px; margin:0px 0px 0px 0px;">ফোনঃ ০২-৪৮১১২১৪১</p>
-        <p style="font-size: 10px; margin:0px 0px 0px 0px;">ই-মেইলঃ sulemankabab@gmail.com</p>
+        <p style="font-size: 18px; margin:5px 0px 0px 0px;">Eric's Bistro</p>
+        <p style="font-size: 14px; margin:0px 0px 5px 0px;">Coffee shop</p>
+        <p style="font-size: 10px; margin:0px 0px 5px 0px;">13/1 Fatema Arcade ,</p>
+        <p style="font-size: 10px; margin:0px 0px 0px 0px;">Mirpur Road, Dhanmondi 1205</p>
+        <p style="font-size: 10px; margin:0px 0px 0px 0px;">Phone: 02-9661515</p>
+        <p style="font-size: 10px; margin:0px 0px 0px 0px;">Email: ericsbistro@yahoo.com</p>
 
         <h2 style="margin-top: 5px;">
             Sales Receipt: {{ $invoice->id }}
@@ -236,11 +235,8 @@
                     </tr>
                 </table>
                 <div style="margin-top: 20px;">
-                    <p style="text-align: center;">
-                        যে কোন অনুষ্ঠানে খাবারের অর্ডার সরবারহ করা হয় <br> এবং হোম ডেলিভারী করা হয়।
-                    </p>
                     <p style="text-align: center; margin-top:10px;">
-                        Developed By <a href="https://www.datatechbd.com/" target="_blank">datatechbd.com</a>
+                        Developed By <a href="https://www.iciclecorporation.com/" target="_blank">iciclecorporation.com</a>
                     </p>
                 </div>
             </div>
