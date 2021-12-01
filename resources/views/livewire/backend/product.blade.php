@@ -5,7 +5,7 @@
                 <h5 class="dashboard_bar">Product</h5>
             </div>
             <div class="d-flex align-items-center">
-                <a href="javascript:void(0);" class="btn btn-xs btn-primary light logout-btn">Logout</a>
+                <a href="{{ route('dashboard') }}" class="btn btn-xs btn-primary light logout-btn">Dashboard</a>
             </div>
         </div>
     </x-slot>
