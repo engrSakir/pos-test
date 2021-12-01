@@ -13,6 +13,7 @@ use App\Http\Livewire\Backend\ProductCategory;
 use App\Http\Livewire\Backend\Profile;
 use App\Http\Livewire\Backend\Report;
 use App\Http\Livewire\Backend\Setting;
+use App\Http\Livewire\Frontend\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', Home::class);
 
 Route::get('/dashboard', function () {
     return redirect()->route(auth()->user()->getAllPermissions()->first()->name);
