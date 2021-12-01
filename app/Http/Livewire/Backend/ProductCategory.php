@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Backend;
 
 use App\Models\ProductCategory as ModelsProductCategory;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class ProductCategory extends Component
 {
@@ -32,6 +33,7 @@ class ProductCategory extends Component
             $model = new ModelsProductCategory();
         }
         $model->name = $this->name;
+        $model->slug = Str::slug($this->name);
         $model->status = $this->status ?? false;
         $model->online = $this->online ?? false;
         $model->save();

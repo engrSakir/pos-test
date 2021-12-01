@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->boolean('status')->default(true);
             $table->boolean('online')->default(false);
             $table->string('name');
+            $table->string('slug');
             $table->double('price')->default(0);
             $table->string('image')->nullable();
             $table->foreignId('created_by')->nullable();

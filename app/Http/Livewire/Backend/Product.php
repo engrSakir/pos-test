@@ -6,7 +6,7 @@ use Livewire\WithFileUploads;
 use App\Models\Product as ModelsProduct;
 use App\Models\ProductCategory;
 use Livewire\Component;
-
+use Illuminate\Support\Str;
 class Product extends Component
 {
     use WithFileUploads;
@@ -42,6 +42,7 @@ class Product extends Component
         $model->status = $this->status ?? false;
         $model->online = $this->online ?? false;
         $model->name = $this->name;
+        $model->slug = Str::slug($this->name);
         $model->price = $this->price;
         if($this->image)
         $model->image = 'storage/'.$this->image->store('images', 'public');
