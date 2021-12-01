@@ -20,6 +20,7 @@ class CreateInvoicesTable extends Migration
             $table->double('discount_amount')->default(0);
             $table->double('paid_amount')->default(0);
             $table->boolean('parcel')->default(false);
+            $table->foreignId('customer_id')->nullable();
             $table->foreignId('created_by')->nullable();
             $table->foreignId('updated_by')->nullable();
             $table->foreignId('deleted_by')->nullable();

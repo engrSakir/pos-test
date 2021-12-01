@@ -16,6 +16,7 @@ class Invoice extends Model
         'discount_amount',
         'paid_amount',
         'parcel',
+        'customer_id',
         'created_by',
         'updated_by',
         'deleted_by',
@@ -23,6 +24,10 @@ class Invoice extends Model
 
     public function items(){
         return $this->hasMany(InvoiceItem::class, 'invoice_id', 'id');
+    }
+
+    public function customer(){
+        return $this->belongsTo(User::class, 'customer_id', 'id');
     }
 
     public function total_price(){
