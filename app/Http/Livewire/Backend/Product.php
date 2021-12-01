@@ -42,7 +42,6 @@ class Product extends Component
         $model->status = $this->status ?? false;
         $model->online = $this->online ?? false;
         $model->name = $this->name;
-        $model->slug = Str::slug($this->name);
         $model->price = $this->price;
         if($this->image)
         $model->image = 'storage/'.$this->image->store('images', 'public');

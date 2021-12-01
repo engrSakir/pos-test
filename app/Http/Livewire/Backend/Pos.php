@@ -91,6 +91,12 @@ class Pos extends Component
 
     public function save()
     {
+        $this->validate([
+            'customer_phone' => 'nullable|max:14',
+            'discount_amount' => 'required|min:0',
+            'paid_amount' => 'required|min:0',
+            'parcel' => 'nullable|boolean',
+        ]);
         if(count($this->basket) > 0){
             try{
                 $invoice = Invoice::create([
@@ -111,6 +117,7 @@ class Pos extends Component
                  }
              }catch(\Exception $e){
                  session()->flash('message', $e->getMessage());
+                 return false;
              }
              $this->basket = array();
              $this->searched_key = null;

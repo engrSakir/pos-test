@@ -18,7 +18,7 @@ class CreateProductCategoriesTable extends Migration
             $table->boolean('status')->default(true);
             $table->boolean('online')->default(false);
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->timestamps();
             $table->foreignId('created_by')->nullable();
             $table->foreignId('updated_by')->nullable();

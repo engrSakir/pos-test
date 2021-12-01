@@ -33,7 +33,6 @@ class ProductCategory extends Component
             $model = new ModelsProductCategory();
         }
         $model->name = $this->name;
-        $model->slug = Str::slug($this->name);
         $model->status = $this->status ?? false;
         $model->online = $this->online ?? false;
         $model->save();

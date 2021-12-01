@@ -6,6 +6,15 @@
         </div>
         @endif
     </div>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="col-7">
         <div class="card">
             <div class="card-header bg-danger text-white d-flex justify-content-between">
