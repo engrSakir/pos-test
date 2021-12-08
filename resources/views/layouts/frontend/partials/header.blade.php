@@ -673,7 +673,7 @@
                 <div class="contact-block">
                   <div>
                     <i class="fa fa-volume-control-phone"></i>
-                    <span>call us<span>123-456-76890</span></span>
+                    <span>call us<span>{{ get_static_option('phone_number') }}</span></span>
                   </div>
                 </div>
                 <div class="btn-group">

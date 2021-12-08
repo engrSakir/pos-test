@@ -41,6 +41,11 @@
                                             <div wire:loading="" wire:target="frontend_logo">Uploading...</div>
                                             <img src="{{ get_static_option('frontend_logo') ?? 'assets/frontend/images/layout-2/logo/logo.png' }}" width="200" alt="">
                                         </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Phone number </label>
+                                            <input type="text" class="form-control" placeholder="+880 1304-734623"
+                                                wire:model="phone_number">
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">UPDATE</button>
                                 </form>
