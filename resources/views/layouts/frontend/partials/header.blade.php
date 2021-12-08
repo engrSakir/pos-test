@@ -107,7 +107,7 @@
               </div>
               <div class="brand-logo logo-sm-center">
                 <a href="{{ url('/') }}">
-                  <img src="assets/frontend/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
+                  <img src="{{ get_static_option('frontend_logo') ?? 'assets/frontend/images/layout-2/logo/logo.png' }}" width="200" class="img-fluid  " alt="logo">
                 </a>
               </div>
             </div>
@@ -231,7 +231,7 @@
               <div class="logo-block">
                 <div class="brand-logo logo-sm-center">
                   <a href="{{ url('/') }}">
-                    <img src="assets/frontend/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
+                    <img src="{{ get_static_option('frontend_logo') ?? 'assets/frontend/images/layout-2/logo/logo.png' }}" width="200" class="img-fluid  " alt="logo">
                   </a>
                 </div>
               </div>
