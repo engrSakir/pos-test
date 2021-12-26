@@ -25,6 +25,10 @@ class ProductCategory extends Model
         return $this->hasMany(Product::class, 'product_category_id', 'id');
     }
 
+    public function onlineProducts(){
+        return $this->hasMany(Product::class, 'product_category_id', 'id')->where('status', true)->where('online', true);
+    }
+
     public static function boot()
     {
         parent::boot();

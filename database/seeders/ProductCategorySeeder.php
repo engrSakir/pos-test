@@ -14,11 +14,11 @@ class ProductCategorySeeder extends Seeder
      */
     public function run()
     {
-        ProductCategory::create(['name' => 'সকালের নাস্তা']);
-        ProductCategory::create(['name' => 'দুপুরের ও রাতের খাবার']);
-        ProductCategory::create(['name' => 'ডেজার্ট']);
-        ProductCategory::create(['name' => 'লাচ্ছি/ফালুদা/জুস']);
-        ProductCategory::create(['name' => 'বিকালের নাস্তা']);
+        ProductCategory::create(['name' => 'সকালের নাস্তা', 'online' => true]);
+        ProductCategory::create(['name' => 'দুপুরের ও রাতের খাবার', 'online' => true]);
+        ProductCategory::create(['name' => 'ডেজার্ট', 'online' => true]);
+        ProductCategory::create(['name' => 'লাচ্ছি/ফালুদা/জুস', 'online' => true]);
+        ProductCategory::create(['name' => 'বিকালের নাস্তা', 'online' => true]);
 
 
 
